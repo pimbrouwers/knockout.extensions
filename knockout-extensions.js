@@ -81,7 +81,7 @@ ko.observableArray.fn.pushIfNotExists = function (itemToAdd, predicate) {
 
 //
 // Extend .push() to add or remove based on property defined at exection time
-// ex: myobsvArray.pushToggle(someItem, someProperty);
+// ex: myobsvArray.pushToggle(someItem, function(item){ /* some custom predicate code */ });
 //
 ko.observableArray.fn.pushToggle = function (itemToAdd, predicate) {
     var self = this;
