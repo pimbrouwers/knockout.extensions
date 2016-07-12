@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>KnockoutJS Extensions by pimbrouwers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">KnockoutJS Extensions</h1>
+      <h2 class="project-tagline">Collection of useful extensions for knockout observables &amp; observable arrays.</h2>
+      <a href="https://github.com/pimbrouwers/knockout-extensions" class="btn">View on GitHub</a>
+      <a href="https://github.com/pimbrouwers/knockout-extensions/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/pimbrouwers/knockout-extensions/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="knockout-js-extensions" class="anchor" href="#knockout-js-extensions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Knockout JS Extensions</h1>
+
+<p>Collection of useful extensions for Knockout JS</p>
+
+<h2>
+<a id="subscrible-methods" class="anchor" href="#subscrible-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Subscrible Methods</h2>
+
+<h4>
+<a id="subscribechanged" class="anchor" href="#subscribechanged" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>subscribeChanged()</h4>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> myOsbv <span class="pl-k">=</span> <span class="pl-smi">ko</span>.<span class="pl-en">observable</span>(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>);
+<span class="pl-smi">myObsv</span>.<span class="pl-en">subscribeChanged</span>(<span class="pl-k">function</span>(<span class="pl-smi">newVal</span>, <span class="pl-smi">oldVal</span>) {
+    <span class="pl-c">/* custom code */</span>
+});</pre></div>
+
+<h2>
+<a id="observable-extensions" class="anchor" href="#observable-extensions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Observable Extensions</h2>
+
+<h4>
+<a id="toggleable" class="anchor" href="#toggleable" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>toggleable()</h4>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> myOsbv <span class="pl-k">=</span> <span class="pl-smi">ko</span>.<span class="pl-en">observable</span>(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>).<span class="pl-en">toggleable</span>();</pre></div>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">button</span> <span class="pl-e">data-bind</span>=<span class="pl-s"><span class="pl-pds">"</span>click: myObsv.toggle()<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">button</span>&gt;</pre></div>
+
+<h4>
+<a id="sanitizevalue" class="anchor" href="#sanitizevalue" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>sanitizeValue()</h4>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> myOsbv <span class="pl-k">=</span> <span class="pl-smi">ko</span>.<span class="pl-en">observable</span>(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>)..<span class="pl-en">sanitizeValue</span>(<span class="pl-sr"><span class="pl-pds">/</span>w3schools<span class="pl-pds">/</span>i</span>, <span class="pl-s"><span class="pl-pds">'</span>-<span class="pl-pds">'</span></span>);</pre></div>
+
+<h2>
+<a id="observable-array-methods" class="anchor" href="#observable-array-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Observable Array Methods</h2>
+
+<h4>
+<a id="pushifnotexists" class="anchor" href="#pushifnotexists" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>pushIfNotExists()</h4>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> myOsbvArray <span class="pl-k">=</span> <span class="pl-smi">ko</span>.<span class="pl-en">observableArray</span>([]);
+<span class="pl-smi">myobsvArray</span>.<span class="pl-en">pushIfNotExists</span>(someItem, <span class="pl-k">function</span>(<span class="pl-smi">item</span>){ 
+    <span class="pl-c">/* some custom predicate code */</span> 
+});</pre></div>
+
+<h4>
+<a id="subscribechanged-1" class="anchor" href="#subscribechanged-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>subscribeChanged()</h4>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> myOsbvArray <span class="pl-k">=</span> <span class="pl-smi">ko</span>.<span class="pl-en">observableArray</span>([]);
+<span class="pl-smi">myobsvArray</span>.<span class="pl-en">pushToggle</span>(someItem, <span class="pl-k">function</span>(<span class="pl-smi">item</span>){ 
+    <span class="pl-c">/* some custom predicate code */</span> 
+});</pre></div>
+
+<h4>
+<a id="subscribearraywithcallback" class="anchor" href="#subscribearraywithcallback" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>subscribeArrayWithCallback()</h4>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> myOsbvArray <span class="pl-k">=</span> <span class="pl-smi">ko</span>.<span class="pl-en">observableArray</span>([]);
+<span class="pl-smi">myobsvArray</span>.<span class="pl-en">subscribeArrayWithCallback</span>(
+    <span class="pl-k">function</span>(<span class="pl-smi">itemWithStatus</span>){ 
+        <span class="pl-c">/* predicate code */</span> 
+    }, 
+    <span class="pl-en">successCallback</span>(<span class="pl-smi">match</span>){ 
+        <span class="pl-c">/* callback code */</span> 
+    }
+);</pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/pimbrouwers/knockout-extensions">KnockoutJS Extensions</a> is maintained by <a href="https://github.com/pimbrouwers">pimbrouwers</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
